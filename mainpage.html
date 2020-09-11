@@ -1,0 +1,97 @@
+<div>
+
+    <!--Today List-->
+<div class='row mt-5'>
+    <div class='col-6'>
+        <h3>Today</h3>
+    </div>
+    <div class='col-6 align-self-center'>
+        <h6 class='text-right mr-2 align-middle'>{{today.getDate()}} {{today.toLocaleString('default', { month: 'short' }) }}</h6>    
+    </div>
+</div>
+
+<hr style="border-bottom: 1px solid black;">
+
+
+<div class='container-fluid justify-content-center'>
+    <div ng-if="todayList[0]==null" class='text-center text-muted'><blockquote'>No wishes for today</blockquote></div>
+    <ul class="list-group list-group-flush ">
+         <li class="list-group-item" ng-repeat="data in todayList"><h6>{{data.name}}</h6></li> 
+    </ul>
+</div>
+
+
+
+<!--This Week List-->
+<div class='row mt-5'>
+    <div class='col-6'>
+        <h3>This Week</h3>
+    </div>      
+</div>
+
+<hr style="border-bottom: 1px solid black;">
+
+<div class='container-fluid justify-content-center'>
+
+    <div ng-if="weekList[0]==null" class='text-center text-muted'><blockquote'>No more wishes for this week</blockquote></div>
+    
+    <ul class="list-group list-group-flush ">
+                    
+         <li class="list-group-item" ng-repeat="data in weekList">
+             <div class='row'>
+                 <div class='col-6'>
+                    <h6>{{data.name}}</h6>
+                 </div>
+                 <div class='col-6'>
+                    <h5 class='text-right justify-content-end'>
+                        <span class='badge badge-pill badge-danger'>{{data.date.getDate()}}</span>
+                     </h5>
+                </div>
+             </div>
+        </li> 
+
+    </ul>
+
+</div>
+
+
+
+<!--This Month List-->
+<div class='row mt-5'>
+    <div class='col-6'>
+        <h3>This Month</h3>
+    </div>
+    
+</div>
+
+<hr style="border-bottom: 1px solid black;">
+
+<div class='container-fluid justify-content-center'>
+    <div ng-if="monthList[0]==null" class='text-center text-muted'><blockquote'>No more wishes for this month</blockquote></div>
+    
+    <ul class="list-group list-group-flush ">
+        
+        <li class="list-group-item" ng-repeat="data in monthList">
+            
+            <div class='row'>
+                
+                <div class='col-6'>
+                   <h6>{{data.name}}</h6>
+                </div>
+
+                <div class='col-6'>
+                   <h5 class='text-right justify-content-end'>
+                       <span class='badge badge-pill badge-danger'>{{data.date.getDate()}}</span>
+                    </h5>
+               </div>
+
+            </div>
+
+        </li> 
+
+    </ul>
+
+</div>
+
+
+</div>

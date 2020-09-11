@@ -1,0 +1,19 @@
+<div>
+    <h5 class="mt-4 text-center">{{ month.toLocaleString('default',{month:'long'}) }} Birthdays</h5>
+    
+    <table class="table mt-md-5">
+        <tbody>
+
+            <tr ng-repeat="data in monthDetails">
+                <td scope="row"><h5>{{data.name}}</h5></td>
+                <td class='text-right justify-content-end'>
+                    <h4 class='pt-1'><span class='badge badge-pill badge-danger'>{{data.date.getDate()}}</span></h4>
+                </td>
+      
+
+               
+            </tr>
+
+        </tbody>
+    </table>
+</div>
