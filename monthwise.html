@@ -4,7 +4,7 @@
     <table class="table mt-md-5">
         <tbody>
 
-            <tr ng-repeat="data in monthDetails">
+            <tr ng-repeat=" data in monthDetails | orderBy : 'date.getDate()' ">
                 <td scope="row"><h5>{{data.name}}</h5></td>
                 <td class='text-right justify-content-end'>
                     <h4 class='pt-1'><span class='badge badge-pill badge-danger'>{{data.date.getDate()}}</span></h4>
