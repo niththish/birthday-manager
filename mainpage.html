@@ -16,7 +16,7 @@
 <div class='container-fluid justify-content-center'>
     <div ng-if="todayList[0]==null" class='text-center text-muted'><blockquote'>No wishes for today</blockquote></div>
     <ul class="list-group list-group-flush ">
-         <li class="list-group-item" ng-repeat="data in todayList"><h6>{{data.name}}</h6></li> 
+         <li class="list-group-item" ng-repeat="data in todayList | orderBy : 'name' "><h6>{{ data.name }}</h6></li> 
     </ul>
 </div>
 
@@ -37,7 +37,7 @@
     
     <ul class="list-group list-group-flush ">
                     
-         <li class="list-group-item" ng-repeat="data in weekList">
+         <li class="list-group-item" ng-repeat="data in weekList | orderBy : 'date.getDate()' ">
              <div class='row'>
                  <div class='col-6'>
                     <h6>{{data.name}}</h6>
@@ -71,7 +71,7 @@
     
     <ul class="list-group list-group-flush ">
         
-        <li class="list-group-item" ng-repeat="data in monthList">
+        <li class="list-group-item" ng-repeat="data in monthList | orderBy : 'date.getDate()'">
             
             <div class='row'>
                 
